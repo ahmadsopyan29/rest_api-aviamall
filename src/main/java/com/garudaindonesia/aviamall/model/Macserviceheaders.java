@@ -1,33 +1,24 @@
 package com.garudaindonesia.aviamall.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "m_aircraft_type")
-public class MAircraftType {
+@Table(name = "m_ac_service_headers")
+public class Macserviceheaders {
 
     private long id;
     private String code;
     private String description;
-    private String type;
-    private String remarks;
 
-    public MAircraftType() {
+    public Macserviceheaders() {
 
     }
 
 
-    public MAircraftType(String code, String description, String type, String remarks) {
+    public Macserviceheaders(String code, String description) {
 
         this.code = code;
         this.description = description;
-        this.type = type;
-        this.remarks = remarks;
     }
 
     @Id
@@ -39,6 +30,7 @@ public class MAircraftType {
     public void setId(long id) {
         this.id = id;
     }
+
 
     @Column(name="code", nullable = false)
     public String getCode() {
@@ -58,32 +50,12 @@ public class MAircraftType {
         this.description = description;
     }
 
-    @Column(name="type", nullable = false)
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    @Column(name="remarks", nullable = false)
-    public String getRemarks() {
-        return remarks;
-    }
-
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
-
     @Override
     public String toString() {
-        return "MAircraftType{" +
+        return "Macserviceheaders{" +
                 "id=" + id +
                 ", code='" + code + '\'' +
                 ", description='" + description + '\'' +
-                ", type='" + type + '\'' +
-                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }
